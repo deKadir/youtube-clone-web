@@ -1,0 +1,17 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  background-color: rgba($color-primary-800, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.content {
+  width: min(90%, 250px);
+  background-color: $color-primary-400;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+}

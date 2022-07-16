@@ -1,0 +1,70 @@
+@import 'assets/styles/_variables.scss';
+.content {
+  font-family: $font-family;
+}
+.thumbnailContainer {
+  position: relative;
+}
+.videoThumbnail {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+.videoLength {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  background-color: $color-primary-600;
+  color: $color-secondary-200;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.2rem;
+  opacity: 0.9;
+}
+.contentInfo {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: $color-secondary-200;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.channelName {
+  display: block;
+  color: $color-secondary-400;
+  font-size: 0.75rem;
+  &:hover {
+    color: $color-secondary-200;
+    transition: $animation-duration;
+  }
+}
+
+.channelImage {
+  border-radius: 50%;
+  max-width: 2.5rem;
+  margin-right: 0.75rem;
+}
+.videoDetails {
+  display: flex;
+}
+.views,
+.date {
+  color: $color-secondary-400;
+  font-size: 0.8rem;
+}
+.date {
+  margin-left: 1rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    aspect-ratio: 1;
+    background-color: $color-secondary-400;
+    top: 0.45rem;
+    left: -0.5rem;
+    border-radius: 50%;
+  }
+}

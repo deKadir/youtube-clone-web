@@ -1,0 +1,28 @@
+@import 'assets/styles/_variables.scss';
+
+.container {
+  background-color: $color-primary-400;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid $color-primary-200;
+  border-bottom: 1px solid $color-primary-200;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+.item {
+  background-color: $color-primary-200;
+  color: $color-secondary-200;
+  font-family: $font-family;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid $color-secondary-600;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-secondary-600;
+    transition: $animation-duration;
+  }
+  font-size: 0.875rem;
+}

@@ -1,0 +1,41 @@
+@import 'assets/styles/_variables.scss';
+
+$gap: 1rem;
+.fixedContent {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.contents {
+  display: flex;
+  gap: $gap;
+  background-color: $color-primary-600;
+  padding: 2rem;
+  flex-wrap: wrap;
+  padding-top: 9rem;
+}
+.content {
+  width: calc(25% - $gap);
+}
+
+::-webkit-scrollbar {
+  background-color: $color-primary-600;
+  width: 0.55rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: $color-secondary-400;
+}
+
+@media (max-width: 1100px) {
+  .content {
+    width: calc(33% - $gap);
+  }
+}
+@media (max-width: 700px) {
+  .content {
+    width: 100%;
+  }
+}

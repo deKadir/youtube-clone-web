@@ -7,8 +7,10 @@ export default function Pages() {
   return (
     <BrowserRouter>
       <Routes>
-        {appRoutes.map((route) => {
-          return <Route path={route.path} element={<route.component />} />;
+        {appRoutes.map((route, key) => {
+          return (
+            <Route path={route.path} element={<route.component />} key={key} />
+          );
         })}
       </Routes>
     </BrowserRouter>
