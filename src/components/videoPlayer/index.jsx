@@ -4,7 +4,7 @@ import { formatSecond } from 'helpers/time';
 
 import { Icon } from 'components';
 export default function VideoPlayer() {
-  let videoRef = useRef(null);
+  const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);

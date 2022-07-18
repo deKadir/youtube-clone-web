@@ -1,0 +1,61 @@
+@import 'assets/styles/_variables.scss';
+
+.container {
+  background-color: $color-primary-600;
+  min-height: 100vh;
+}
+.fixedContent {
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+}
+.content {
+  padding-top: 5rem;
+  width: min(800px, 90%);
+  margin-inline: auto;
+}
+.filterOptions {
+  border-bottom: 1px solid $color-secondary-600;
+  margin-bottom: 1rem;
+}
+.filterHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-left: -1.4rem;
+  span {
+    color: $color-secondary-200;
+    font-family: $font-family;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.filterCatalog {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.catalog {
+  color: $color-secondary-200;
+  font-family: $font-family;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  h4 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-secondary-600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  span {
+    cursor: pointer;
+    color: $color-secondary-400;
+    text-transform: capitalize;
+  }
+}
+.result {
+  padding-bottom: 1rem;
+}

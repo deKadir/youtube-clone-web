@@ -5,11 +5,11 @@ export function Content() {
   return (
     <a className={styles.content} href="#">
       <Thumbnail />
-      <div className={styles.contentInfo}>
-        <div className={styles.imageSection}>
+      <div className={styles.contentInfoSide}>
+        <div className={styles.contentImage}>
           <ChannelImage src="https://yt3.ggpht.com/ytc/AKedOLTmeJoYYkGzyMymXox1FyO7UQICjLFYfOKIl61tmA=s88-c-k-c0x00ffffff-no-rj" />
         </div>
-        <div className={styles.infoSection}>
+        <div className={styles.contentInfo}>
           <Title title="Sezen aksu firuze" />
           <Channel name="Sezen aksu" />
           <VideoDetails date="4 hours" views="42k" />
@@ -24,11 +24,31 @@ export function Recommend() {
       <div className={styles.recommendThumbnail}>
         <Thumbnail />
       </div>
-      <div className={styles.contentInfo}>
-        <div className={styles.infoSection}>
+      <div className={styles.recommendInfoSide}>
+        <div className={styles.recommendInfo}>
           <Title title="Sezen aksu firuze high quality full album" />
           <Channel name="Sezen aksu" />
           <VideoDetails date="4 hours" views="42k" />
+        </div>
+      </div>
+    </a>
+  );
+}
+
+export function ResultCard() {
+  return (
+    <a className={styles.result} href="#">
+      <div className={styles.resultThumbnail}>
+        <Thumbnail />
+      </div>
+      <div className={styles.resultInfoSide}>
+        <div className={styles.resultInfo}>
+          <Title title="Sezen aksu firuze high quality full album" />
+          <VideoDetails date="4 hours" views="42k" />
+          <div className={styles.resultChannelInfo}>
+            <ChannelImage src="https://yt3.ggpht.com/ytc/AKedOLTmeJoYYkGzyMymXox1FyO7UQICjLFYfOKIl61tmA=s88-c-k-c0x00ffffff-no-rj" />
+            <Channel name="Sezen aksu" />
+          </div>
         </div>
       </div>
     </a>
@@ -59,7 +79,7 @@ const Channel = ({ name }) => {
     </Link>
   );
 };
-const ChannelImage = ({ src, direct }) => {
+const ChannelImage = ({ src }) => {
   return (
     <Link to="/">
       <img src={src} className={styles.channelImage} />
