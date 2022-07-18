@@ -1,0 +1,46 @@
+@import 'assets/styles/_variables.scss';
+
+.container {
+  display: flex;
+  padding-block: 1rem;
+}
+.commentSide {
+  margin-left: 1rem;
+  color: $color-secondary-200;
+}
+.commentInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.125rem;
+
+  p {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.875rem;
+    color: $color-secondary-400;
+  }
+}
+.comment {
+  font-size: 0.9rem;
+}
+.commentActions {
+  display: flex;
+  gap: 1rem;
+}
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: transparent;
+  border: none;
+  color: $color-secondary-200;
+  font-size: 0.875rem;
+}
+.viewButton {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: $color-neutral-200;
+}

@@ -1,0 +1,53 @@
+@import 'assets/styles/_variables.scss';
+.btn {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.125rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  user-select: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  &:active {
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      background-color: rgba($color-secondary-400, 0.25);
+      inset: 0;
+      border-radius: inherit;
+    }
+  }
+}
+.disabled {
+  &:disabled {
+    background-color: rgba($color-secondary-400, 0.25);
+    color: $color-secondary-400;
+    &::after {
+      background-color: transparent !important;
+    }
+  }
+}
+.text {
+  @extend .btn;
+  @extend .disabled;
+  background-color: transparent;
+  color: $color-secondary-400;
+}
+.contained {
+  @extend .btn;
+  @extend .disabled;
+  background-color: $color-neutral-200;
+  color: $color-primary-800;
+}
+.secondary {
+  @extend .btn;
+}
+.danger {
+  @extend .contained;
+  background-color: $color-accent-200;
+  color: $color-secondary-200;
+}

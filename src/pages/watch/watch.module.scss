@@ -1,0 +1,53 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  background-color: $color-primary-600;
+  font-family: $font-family;
+}
+.fixedContent {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.pageContainer {
+  width: 100%;
+  padding-top: 4rem;
+}
+.page {
+  display: flex;
+}
+.videoSide {
+  width: 70%;
+  padding: 1rem;
+}
+.videoTags {
+  display: flex;
+  gap: 0.5rem;
+  a {
+    color: $color-neutral-200;
+    font-size: 0.75rem;
+  }
+}
+.videoTitle {
+  color: $color-secondary-200;
+  font-size: 1.25rem;
+  font-weight: medium;
+}
+.videoInfo {
+  color: $color-secondary-200;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-block: 0.5rem;
+}
+.videoCaption {
+  color: $color-secondary-200;
+  font-size: 0.9rem;
+}
+.comments {
+  margin-top: 1rem;
+}
+.recommendSide {
+  width: 30%;
+  margin-top: 2rem;
+}

@@ -1,4 +1,5 @@
 import { SvgHeader, SvgMenu, SvgSearch } from 'assets/icons';
+import { Avatar } from 'components';
 import { Link } from 'react-router-dom';
 import styles from './header.module.scss';
 
@@ -16,10 +17,7 @@ export default function Header() {
           <SearchBar />
         </div>
         <div className={styles.headerRight}>
-          <img
-            src="https://avatars.githubusercontent.com/u/83883656?v=4"
-            alt="profile image"
-          />
+          <Avatar src="https://avatars.githubusercontent.com/u/83883656?v=4" />
         </div>
       </div>
     </header>

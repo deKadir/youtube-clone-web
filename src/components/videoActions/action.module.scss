@@ -1,0 +1,16 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  margin-block: 0.5rem;
+}
+.list {
+  display: flex;
+  gap: 1.5rem;
+  color: $color-secondary-200;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}

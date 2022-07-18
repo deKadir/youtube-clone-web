@@ -1,0 +1,61 @@
+@import 'assets/styles/_variables.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-secondary-600;
+  padding: 0.5rem;
+  width: 50%;
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+}
+.info {
+  margin-left: 1rem;
+  a {
+    color: $color-secondary-200;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  p {
+    color: $color-secondary-400;
+    font-size: 0.85rem;
+  }
+}
+.actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.subscribe,
+.subscribed {
+  padding: 0.65rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.subscribe {
+  background-color: $color-accent-200;
+  color: $color-secondary-200;
+}
+.subscribed {
+  background-color: $color-secondary-600;
+  color: $color-secondary-400;
+}
+.notification {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: $color-secondary-200;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}

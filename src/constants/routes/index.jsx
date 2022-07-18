@@ -1,7 +1,7 @@
 import Home from 'pages/home';
 import Signin from 'pages/signin';
 import Signup from 'pages/signup';
-import Video from 'pages/video';
+import Watch from 'pages/watch';
 const appRoutes = [
   {
     exact: true,
@@ -13,7 +13,7 @@ const appRoutes = [
     exact: true,
     protected: false,
     path: '/watch',
-    component: Video,
+    component: Watch,
   },
   {
     exact: true,

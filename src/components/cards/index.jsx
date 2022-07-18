@@ -18,6 +18,22 @@ export function Content() {
     </a>
   );
 }
+export function Recommend() {
+  return (
+    <a className={styles.recommend} href="#">
+      <div className={styles.recommendThumbnail}>
+        <Thumbnail />
+      </div>
+      <div className={styles.contentInfo}>
+        <div className={styles.infoSection}>
+          <Title title="Sezen aksu firuze high quality full album" />
+          <Channel name="Sezen aksu" />
+          <VideoDetails date="4 hours" views="42k" />
+        </div>
+      </div>
+    </a>
+  );
+}
 
 const Title = ({ title }) => {
   return <h1 className={styles.title}>{title}</h1>;

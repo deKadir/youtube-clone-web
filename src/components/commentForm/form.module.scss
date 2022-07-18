@@ -1,0 +1,29 @@
+@import 'assets/styles/_variables.scss';
+.commentForm {
+  display: flex;
+}
+.formContainer {
+  width: 100%;
+  margin-left: 1rem;
+  input {
+    width: 100%;
+    background-color: $color-primary-600;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $color-secondary-600;
+    padding: 0.25rem;
+    color: $color-secondary-200;
+    &:focus {
+      border-bottom: 2px solid $color-secondary-200;
+    }
+  }
+}
+.formButtons {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  .btnComment {
+    margin-left: 0.5rem;
+  }
+}
