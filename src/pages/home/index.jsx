@@ -8,10 +8,8 @@ export default function Home() {
   return (
     <div>
       {/* <Sidebar /> */}
-      <div className={styles.fixedContent}>
-        <Header />
-        <Nav />
-      </div>
+      <Header />
+      <Nav />
       <ul className={styles.contents}>
         <li className={styles.content}>
           <Content />

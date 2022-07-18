@@ -1,14 +1,17 @@
 @import 'assets/styles/_variables.scss';
-.headerContent {
-  display: flex;
-  padding-block: 0.75rem;
-  padding-inline: 1.5rem;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $color-primary-400;
-  width: 100%;
-}
+
 .header {
+  &Content {
+    display: flex;
+    padding-block: 0.75rem;
+    padding-inline: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-primary-400;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
   &Left,
   &Right {
     display: flex;

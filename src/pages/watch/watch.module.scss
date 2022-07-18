@@ -2,16 +2,9 @@
 .container {
   background-color: $color-primary-600;
   font-family: $font-family;
-}
-.fixedContent {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-.pageContainer {
-  width: 100%;
   padding-top: 4rem;
 }
+
 .page {
   display: flex;
 }

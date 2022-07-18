@@ -6,6 +6,9 @@
   border-top: 1px solid $color-primary-200;
   border-bottom: 1px solid $color-primary-200;
   width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 4.1rem;
 }
 
 .list {

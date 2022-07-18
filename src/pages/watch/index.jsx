@@ -10,11 +10,9 @@ import { Recommend } from 'components/cards';
 import styles from './watch.module.scss';
 export default function Video() {
   return (
-    <div className={styles.container}>
-      <div className={styles.fixedContent}>
-        <Header />
-      </div>
-      <div className={styles.pageContainer}>
+    <div>
+      <Header />
+      <div className={styles.container}>
         <VideoPlayer />
         <div className={styles.page}>
           <div className={styles.videoSide}>

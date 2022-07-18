@@ -4,11 +4,7 @@
   background-color: $color-primary-600;
   min-height: 100vh;
 }
-.fixedContent {
-  width: 100%;
-  z-index: 99;
-  position: fixed;
-}
+
 .content {
   padding-top: 5rem;
   width: min(800px, 90%);

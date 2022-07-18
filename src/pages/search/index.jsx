@@ -5,9 +5,7 @@ import styles from './search.module.scss';
 export default function Search() {
   return (
     <div className={styles.container}>
-      <div className={styles.fixedContent}>
-        <Header />
-      </div>
+      <Header />
       <div className={styles.content}>
         <div className={styles.filterOptions}>
           <Button className={styles.filterHeader}>

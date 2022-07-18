@@ -3,6 +3,8 @@ import Search from 'pages/search';
 import Signin from 'pages/signin';
 import Signup from 'pages/signup';
 import Watch from 'pages/watch';
+import Channel from 'pages/channel';
+
 const appRoutes = [
   {
     exact: true,
@@ -15,6 +17,12 @@ const appRoutes = [
     protected: false,
     path: '/watch',
     component: Watch,
+  },
+  {
+    exact: true,
+    protected: false,
+    path: '/channel/:tab',
+    component: Channel,
   },
   {
     exact: true,

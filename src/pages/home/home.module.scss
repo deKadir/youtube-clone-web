@@ -1,11 +1,6 @@
 @import 'assets/styles/_variables.scss';
 
 $gap: 1rem;
-.fixedContent {
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-}
 
 .contents {
   display: flex;
