@@ -47,15 +47,11 @@ const Tabs = () => {
   return (
     <nav className={styles.tabNav}>
       <ul className={styles.tabList}>
-        <li className={styles.tabItem}>
-          <Link to="/channel/videos">Videos</Link>
-        </li>
-        <li className={styles.tabItem}>
-          <Link to="/channel/playlists">Playlists</Link>
-        </li>
-        <li className={styles.tabItem}>
-          <Link to="/channel/channels">Channels</Link>
-        </li>
+        {channelTabs.map((t) => (
+          <li className={styles.tabItem}>
+            <Link to={`/channel/${t.tab}`}>{t.title}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -4,6 +4,7 @@ import Signin from 'pages/signin';
 import Signup from 'pages/signup';
 import Watch from 'pages/watch';
 import Channel from 'pages/channel';
+import Dashboard from 'pages/dashboard';
 
 const appRoutes = [
   {
@@ -17,6 +18,12 @@ const appRoutes = [
     protected: false,
     path: '/watch',
     component: Watch,
+  },
+  {
+    exact: true,
+    protected: true,
+    path: '/dashboard/:tab',
+    component: Dashboard,
   },
   {
     exact: true,

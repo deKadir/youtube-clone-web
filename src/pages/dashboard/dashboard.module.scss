@@ -1,0 +1,57 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  display: flex;
+}
+
+.sidebar {
+  &Container {
+    width: 20%;
+    background-color: $color-primary-1000;
+    border-right: 1px solid $color-secondary-600;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-family;
+  }
+  &Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-block: 0.5rem;
+      color: $color-secondary-200;
+    }
+    p {
+      font-size: 0.875rem;
+      color: $color-secondary-400;
+    }
+  }
+}
+.tabList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.listItem {
+  a {
+    display: block;
+    padding-block: 0.75rem;
+    color: $color-secondary-400;
+    width: 100%;
+    text-align: center;
+    font-size: 0.875rem;
+    border-left: 5px solid transparent;
+    &:hover,
+    &:focus {
+      background-color: $color-primary-600;
+      cursor: pointer;
+    }
+    &:focus,
+    &:active {
+      color: $color-accent-200;
+      border-left-color: $color-accent-200;
+    }
+  }
+}
