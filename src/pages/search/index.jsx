@@ -1,7 +1,9 @@
+import React from 'react';
+
+import styles from './search.module.scss';
+
 import { Button, Header, Icon } from 'components';
 import { ResultCard } from 'components/cards';
-import React from 'react';
-import styles from './search.module.scss';
 export default function Search() {
   return (
     <div className={styles.container}>

@@ -1,0 +1,45 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  background-color: $color-primary-800;
+  min-height: 100vh;
+}
+.content {
+  width: $content-large;
+  margin-inline: auto;
+  h4 {
+    padding-block: 1.5rem;
+    color: $color-secondary-200;
+    font-family: $font-family;
+  }
+}
+.list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  &Item {
+    width: calc(25% - 1rem);
+  }
+}
+
+.playlist {
+  &Container {
+    font-family: $font-family;
+    h1 {
+      color: $color-secondary-200;
+      font-weight: bold;
+      font-size: 1rem;
+      padding-block: 0.25rem;
+    }
+    span {
+      color: $color-secondary-400;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+  }
+}
+@media (max-width: '1000px') {
+  .videoItem {
+    width: calc(50% - 1rem);
+  }
+}

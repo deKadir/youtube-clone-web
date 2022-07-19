@@ -1,0 +1,61 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  padding-top: 4.05rem;
+  background-color: $color-primary-600;
+}
+.content {
+  width: $content-large;
+  font-family: $font-family;
+  color: $color-secondary-200;
+  margin-inline: auto;
+}
+.profile {
+  padding-block: 2rem;
+
+  &Content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &Info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  &Details {
+    h1 {
+      font-weight: 500;
+    }
+    span {
+      color: $color-secondary-400;
+    }
+  }
+  &Actions {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.tab {
+  &List {
+    display: flex;
+    gap: 1rem;
+  }
+  &Item {
+    a {
+      display: block;
+      color: $color-secondary-400;
+      font-weight: bold;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $color-secondary-200;
+      }
+      &:active,
+      &:focus {
+        color: $color-secondary-200;
+        border-color: $color-secondary-400;
+      }
+    }
+  }
+}

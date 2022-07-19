@@ -1,0 +1,29 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  background-color: $color-primary-800;
+  min-height: 100vh;
+}
+.content {
+  width: $content-large;
+  margin-inline: auto;
+  h4 {
+    padding-block: 1.5rem;
+    color: $color-secondary-200;
+    font-family: $font-family;
+  }
+}
+.video {
+  &List {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  &Item {
+    width: calc(33% - 1rem);
+  }
+}
+@media (max-width: '1000px') {
+  .videoItem {
+    width: calc(50% - 1rem);
+  }
+}

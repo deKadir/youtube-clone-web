@@ -10,7 +10,7 @@
   user-select: none;
   font-weight: 600;
   letter-spacing: 1px;
-
+  font-family: $font-family;
   &:active {
     &::after {
       position: absolute;

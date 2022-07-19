@@ -1,0 +1,44 @@
+@import 'assets/styles/_variables.scss';
+.container {
+  background-color: $color-primary-800;
+  min-height: 100vh;
+}
+.content {
+  width: $content-large;
+  margin-inline: auto;
+  h4 {
+    padding-block: 1.5rem;
+    color: $color-secondary-200;
+    font-family: $font-family;
+  }
+}
+.list {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+
+  &Item {
+    width: calc(20% - 4rem);
+  }
+}
+.subscription {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    font-family: $font-family;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: $color-secondary-200;
+    h1 {
+      font-size: 1rem;
+      margin-block: 0.5rem;
+    }
+    span {
+      color: $color-secondary-400;
+      font-size: 0.875rem;
+    }
+  }
+}

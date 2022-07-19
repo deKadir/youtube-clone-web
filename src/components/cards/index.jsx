@@ -3,7 +3,7 @@ import styles from './cards.module.scss';
 
 export function Content() {
   return (
-    <a className={styles.content} href="#">
+    <Link className={styles.content} to="/watch">
       <Thumbnail />
       <div className={styles.contentInfoSide}>
         <div className={styles.contentImage}>
@@ -15,12 +15,12 @@ export function Content() {
           <VideoDetails date="4 hours" views="42k" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 export function Recommend() {
   return (
-    <a className={styles.recommend} href="#">
+    <Link className={styles.recommend} to="/watch">
       <div className={styles.recommendThumbnail}>
         <Thumbnail />
       </div>
@@ -31,13 +31,13 @@ export function Recommend() {
           <VideoDetails date="4 hours" views="42k" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
 export function ResultCard() {
   return (
-    <a className={styles.result} href="#">
+    <Link className={styles.result} to="/watch">
       <div className={styles.resultThumbnail}>
         <Thumbnail />
       </div>
@@ -51,7 +51,7 @@ export function ResultCard() {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header, Nav, Sidebar } from 'components';
-import { Content } from 'components/cards';
 
 import styles from './home.module.scss';
 
+import { Header, Nav, Sidebar } from 'components';
+import { Content } from 'components/cards';
+
 export default function Home() {
   return (
-    <div>
+    <>
       {/* <Sidebar /> */}
       <Header />
       <Nav />
@@ -30,6 +31,6 @@ export default function Home() {
           <Content />
         </li>
       </ul>
-    </div>
+    </>
   );
 }
