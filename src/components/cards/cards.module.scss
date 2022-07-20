@@ -97,3 +97,16 @@
     margin-top: 0.5rem;
   }
 }
+//playlist
+.playlist {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-secondary-400;
+  padding-block: 1rem;
+  gap: 0.5rem;
+  font-family: $font-family;
+  img {
+    width: 20%;
+    aspect-ratio: 3/2;
+  }
+}

@@ -55,6 +55,20 @@ export function ResultCard() {
   );
 }
 
+export function PlaylistCard() {
+  return (
+    <Link className={styles.playlist} to="/video">
+      <img
+        src="https://st2.myideasoft.com/idea/fo/10/myassets/products/813/71237789-680483449127860-5199516412451749888-n.jpg?revision=1580465975"
+        alt=""
+      />
+      <div className={styles.playlistInfo}>
+        <Title title="Sezen aksu firuze high quality full album" />
+        <Channel name="Sezen aksu" />
+      </div>
+    </Link>
+  );
+}
 const Title = ({ title }) => {
   return <h1 className={styles.title}>{title}</h1>;
 };

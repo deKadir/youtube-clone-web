@@ -1,0 +1,8 @@
+@import 'assets/styles/_variables.scss';
+.link {
+  color: $color-neutral-200;
+  line-height: 2;
+  &:active {
+    opacity: 0.9;
+  }
+}

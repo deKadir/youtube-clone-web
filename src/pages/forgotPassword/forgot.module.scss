@@ -1,0 +1,12 @@
+@import 'assets/styles/_variables.scss';
+
+.container {
+  background-color: $color-primary-1000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  width: min(400px, 95%);
+}

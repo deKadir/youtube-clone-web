@@ -1,0 +1,34 @@
+@import 'assets/styles/_variables.scss';
+
+.form {
+  padding: 2rem;
+  background-color: $color-primary-800;
+  border-radius: 1rem;
+  font-family: $font-family;
+  width: 100%;
+  &Title {
+    color: $color-secondary-400;
+    margin-block: 1rem;
+  }
+  &Control {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    flex-direction: column;
+  }
+  &Input {
+    background-color: rgba($color-secondary-600, 0.7);
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    transition: $animation-duration;
+    &:focus {
+      background-color: $color-secondary-600;
+    }
+    border-radius: 0.25rem;
+  }
+  &Label {
+    color: $color-secondary-400;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -5,7 +5,8 @@ import Signup from 'pages/signup';
 import Watch from 'pages/watch';
 import Channel from 'pages/channel';
 import Dashboard from 'pages/dashboard';
-
+import ForgotPassword from 'pages/forgotPassword';
+import Reset from 'pages/reset';
 const appRoutes = [
   {
     exact: true,
@@ -25,6 +26,7 @@ const appRoutes = [
     path: '/dashboard/:tab',
     component: Dashboard,
   },
+
   {
     exact: true,
     protected: false,
@@ -48,6 +50,18 @@ const appRoutes = [
     protected: false,
     path: '/signup',
     component: Signup,
+  },
+  {
+    exact: true,
+    protected: false,
+    path: '/forget',
+    component: ForgotPassword,
+  },
+  {
+    exact: false,
+    protected: false,
+    path: '/reset',
+    component: Reset,
   },
 ];
 export default appRoutes;

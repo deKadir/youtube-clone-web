@@ -9,6 +9,7 @@ import Avatar from './avatar';
 import Button from './button';
 import CommentForm from './commentForm';
 import Icon from './icon';
+import { CustomLink } from './link';
 export {
   Header,
   Sidebar,
@@ -21,4 +22,5 @@ export {
   Button,
   CommentForm,
   Icon,
+  CustomLink,
 };
