@@ -31,4 +31,18 @@
     color: $color-secondary-400;
     margin-bottom: 0.5rem;
   }
+  &ValidationMessage {
+    color: $color-danger;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.response {
+  &Success {
+    color: $color-success;
+  }
+  &Error {
+    color: $color-danger;
+  }
 }
