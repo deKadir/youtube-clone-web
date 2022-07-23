@@ -4,15 +4,22 @@
   display: flex;
   padding-block: 1rem;
 }
-.commentSide {
+.commentWrapper {
   margin-left: 1rem;
   color: $color-secondary-200;
+  width: 100%;
+}
+.commentContainer {
+  display: flex;
+  gap: 1rem;
+}
+.commentBody {
+  width: 100%;
 }
 .commentInfo {
   display: flex;
   align-items: center;
   margin-bottom: 0.125rem;
-
   p {
     margin-right: 1rem;
     font-size: 0.9rem;
@@ -37,10 +44,12 @@
   border: none;
   color: $color-secondary-200;
   font-size: 0.875rem;
+  padding: 0;
 }
 .viewButton {
   margin-top: 0.25rem;
   font-size: 0.875rem;
   cursor: pointer;
   color: $color-neutral-200;
+  user-select: none;
 }

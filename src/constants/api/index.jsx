@@ -28,11 +28,23 @@ const requests = {
     get: (id) => API.get('/channel', { query: id }),
     getProfile: () => API.get('/channel/profile'),
     subscriptions: (params) => API.get('/channel/subscriptions', params),
-    subscribe: (query) => API.post('/channel/subscribe', { query }),
+    subscribe: (params) => API.post('/channel/subscribe', {}, { params }),
     update: (body) => API.patch('/channel/update', { body }),
   },
   video: {
     recommend: (params) => API.get('/video/recommend', { params }),
+    get: (id) => API.get('/video', { params: { id } }),
+    comments: (params) => API.get('/video/comments', { params }),
+  },
+  comment: {
+    replies: (params) => API.get('/comment/replies', { params }),
+    add: (body) => API.post('/comment/add', body),
+  },
+  reply: {
+    add: (body) => API.post('/reply/add', body),
+  },
+  action: {
+    add: (params) => API.post('/action', {}, { params }),
   },
 };
 export default requests;

@@ -14,6 +14,7 @@ export const maxString = (string, chars) => {
 };
 
 export const elapsedTime = (createdAt) => {
+  if (!createdAt) return;
   const [year, month, day] = createdAt.split(/-|T/).map((e) => parseInt(e));
   const date = new Date();
   const [cYear, cMonth, cDay] = [
@@ -40,4 +41,25 @@ export const formatNumber = (number) => {
     return `${(num / 1000).toFixed(1)}K`;
   }
   return number;
+};
+
+export const formatDate = (date) => {
+  if (!date) return;
+  const [year, month, day] = date.split(/-|T/).map((e) => parseInt(e));
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'June',
+    'July',
+    'Aug',
+    'Sept',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  return `${months[month]} ${day}, ${year}`;
 };

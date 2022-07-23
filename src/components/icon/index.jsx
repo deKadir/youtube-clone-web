@@ -5,8 +5,8 @@ import classNames from 'classnames';
 export default function Icon(props) {
   const Svg = icons[`Svg${props.icon}`];
   return (
-    <i {...props} className={classNames(props.className, styles.container)}>
+    <div {...props} className={classNames(props.className, styles.container)}>
       {<Svg />}
-    </i>
+    </div>
   );
 }

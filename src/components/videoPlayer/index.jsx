@@ -3,7 +3,7 @@ import styles from './player.module.scss';
 import { formatSecond } from 'helpers/format';
 
 import { Icon } from 'components';
-export default function VideoPlayer() {
+export default function VideoPlayer({ src }, props) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -32,29 +32,30 @@ export default function VideoPlayer() {
   const durationTxt = `${formatSecond(current)} / ${formatSecond(duration)}`;
 
   useEffect(() => {
+    if (!videoRef) return;
     setTimeout(() => {
-      setDuration(videoRef?.current?.duration);
+      setDuration(videoRef.current?.duration);
     }, 100);
     const endEvent = () => setPlaying(false);
     const timeUpdateEvent = (event) => {
       setCurrent(event.target.currentTime);
     };
 
-    videoRef?.current.addEventListener('ended', endEvent);
-    videoRef?.current.addEventListener('timeupdate', timeUpdateEvent);
+    videoRef.current.addEventListener('ended', endEvent);
+    videoRef.current.addEventListener('timeupdate', timeUpdateEvent);
     const removeListeners = () => {
       videoRef.current.removeEventListener('ended', endEvent);
       videoRef.current.removeEventListener('timeupdate', timeUpdateEvent);
     };
     return removeListeners;
-  }, []);
+  }, [videoRef.current]);
 
   return (
-    <div className={styles.videoContainer}>
+    <div className={styles.videoContainer} {...props}>
       <video
         ref={videoRef}
         className={styles.video}
-        src={require('assets/images/example.mp4')}
+        src={src}
         typeof="video/mp4"
         onClick={handlePlay}
       ></video>

@@ -20,17 +20,24 @@ export function Content({ owner, title, ...content }) {
     </Link>
   );
 }
-export function Recommend() {
+export function Recommend({
+  _id,
+  title,
+  owner,
+  createdAt,
+  viewerCount,
+  thumbnail,
+}) {
   return (
-    <Link className={styles.recommend} to="/watch">
+    <Link className={styles.recommend} to={`/watch?v=${_id}`}>
       <div className={styles.recommendThumbnail}>
-        <Thumbnail />
+        <Thumbnail thumbnail={thumbnail} />
       </div>
       <div className={styles.recommendInfoSide}>
         <div className={styles.recommendInfo}>
-          <Title title="Sezen aksu firuze high quality full album" />
-          <Channel name="Sezen aksu" />
-          <VideoDetails date="4 hours" views="42k" />
+          <Title title={title} />
+          <Channel name={owner?.name} />
+          <VideoDetails createdAt={createdAt} viewerCount={viewerCount} />
         </div>
       </div>
     </Link>
