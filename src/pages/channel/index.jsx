@@ -14,7 +14,7 @@ export default function Channel() {
           <Profile />
           <Tabs />
         </div>
-        <Tab />
+        {/* <Tab /> */}
       </div>
     </>
   );

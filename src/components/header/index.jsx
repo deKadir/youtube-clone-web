@@ -1,9 +1,14 @@
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { SvgHeader, SvgMenu, SvgSearch } from 'assets/icons';
 import { Avatar, Icon } from 'components';
-import { Link } from 'react-router-dom';
+import { getProfile } from 'helpers/file';
 import styles from './header.module.scss';
 
 export default function Header() {
+  const user = useSelector((state) => state?.user?.info);
+  const profile = getProfile(user?.image);
   return (
     <header className={styles.container}>
       <div className={styles.headerContent}>
@@ -18,7 +23,7 @@ export default function Header() {
         </div>
         <div className={styles.headerRight}>
           <Icon icon="Upload" />
-          <Avatar src="https://avatars.githubusercontent.com/u/83883656?v=4" />
+          <Avatar src={profile} />
         </div>
       </div>
     </header>

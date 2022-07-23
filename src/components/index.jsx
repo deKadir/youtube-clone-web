@@ -10,6 +10,7 @@ import Button from './button';
 import CommentForm from './commentForm';
 import Icon from './icon';
 import { CustomLink } from './link';
+import Spinner from './spinner';
 export {
   Header,
   Sidebar,
@@ -23,4 +24,5 @@ export {
   CommentForm,
   Icon,
   CustomLink,
+  Spinner,
 };

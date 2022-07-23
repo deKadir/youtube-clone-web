@@ -15,7 +15,7 @@ const appRoutes = [
     component: Home,
   },
   {
-    exact: true,
+    exact: false,
     protected: false,
     path: '/watch',
     component: Watch,
@@ -30,7 +30,7 @@ const appRoutes = [
   {
     exact: true,
     protected: false,
-    path: '/channel/:tab',
+    path: '/channel/:channel/:tab',
     component: Channel,
   },
   {

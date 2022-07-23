@@ -5,6 +5,8 @@
   color: $color-secondary-200;
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 .channelName {
   display: block;
@@ -64,8 +66,7 @@
   font-family: $font-family;
   &InfoSide {
     display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     margin-bottom: 1rem;
   }
 }

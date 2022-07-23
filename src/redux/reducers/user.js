@@ -1,4 +1,4 @@
-import { LOGIN, REGISTER } from 'redux/types';
+import { LOGIN, REGISTER, SET_USERINFO, RESET_USER } from 'redux/types';
 const initialState = {};
 
 const userReducer = (state = initialState, action) => {
@@ -7,6 +7,10 @@ const userReducer = (state = initialState, action) => {
       return { ...action.payload };
     case LOGIN:
       return { ...action.payload };
+    case SET_USERINFO:
+      return { ...state, ...action.payload };
+    case RESET_USER:
+      return {};
 
     default:
       return state;

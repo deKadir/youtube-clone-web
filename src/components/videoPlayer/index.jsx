@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './player.module.scss';
-import { formatSecond } from 'helpers/time';
+import { formatSecond } from 'helpers/format';
 
 import { Icon } from 'components';
 export default function VideoPlayer() {

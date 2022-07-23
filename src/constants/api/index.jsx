@@ -1,12 +1,17 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api/v1';
+export const BASE_URL = 'http://localhost:8080/api/v1';
 
 const API = axios.create({ baseURL: BASE_URL });
 
 API.interceptors.request.use((req) => {
-  const token = localStorage.getItem('user')?.token;
-  if (localStorage.getItem(token)) {
+  let token;
+  const user = localStorage.getItem('youtube_clone');
+  if (user) {
+    token = JSON.parse(localStorage.getItem('youtube_clone'))?.user?.token;
+  }
+
+  if (token) {
     req.headers.Authorization = `Bearer ${token}`;
   }
   return req;
@@ -21,9 +26,13 @@ const requests = {
   },
   channel: {
     get: (id) => API.get('/channel', { query: id }),
+    getProfile: () => API.get('/channel/profile'),
     subscriptions: (params) => API.get('/channel/subscriptions', params),
     subscribe: (query) => API.post('/channel/subscribe', { query }),
     update: (body) => API.patch('/channel/update', { body }),
+  },
+  video: {
+    recommend: (params) => API.get('/video/recommend', { params }),
   },
 };
 export default requests;
