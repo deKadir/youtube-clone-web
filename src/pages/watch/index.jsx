@@ -48,7 +48,7 @@ export default function Video() {
               <Comments videoId={videoId} />
             </div>
           </div>
-          <Recommends />
+          <Recommends videoId={videoId} />
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@ const VideoDetails = ({ caption, title, tags, viewerCount, createdAt }) => {
 };
 
 const Comments = ({ videoId }) => {
-  const [page] = usePaginate();
+  const [page, setPage] = usePaginate();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const fetchComments = async () => {
@@ -99,7 +99,11 @@ const Comments = ({ videoId }) => {
   };
   useEffect(() => {
     fetchComments();
-  }, [page]);
+  }, [page, videoId]);
+  useEffect(() => {
+    setData();
+    setPage(1);
+  }, [videoId]);
 
   return (
     <ul className={styles.comments}>
@@ -113,7 +117,7 @@ const Comments = ({ videoId }) => {
   );
 };
 
-const Recommends = () => {
+const Recommends = ({ videoId }) => {
   const [recommends, setRecommends] = useState([]);
 
   const fetchRecommends = async () => {
@@ -128,7 +132,7 @@ const Recommends = () => {
   };
   useEffect(() => {
     fetchRecommends();
-  }, []);
+  }, [videoId]);
   return (
     <div className={styles.recommendSide}>
       {recommends?.map((r, key) => (
