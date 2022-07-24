@@ -51,11 +51,11 @@
       &:hover {
         color: $color-secondary-200;
       }
-      &:active,
-      &:focus {
-        color: $color-secondary-200;
-        border-color: $color-secondary-400;
-      }
+      // &:active,
+      // &:focus {
+      //   color: $color-secondary-200;
+      //   border-color: $color-secondary-400;
+      // }
     }
   }
 }

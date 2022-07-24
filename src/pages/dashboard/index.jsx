@@ -1,10 +1,9 @@
-import { Avatar } from 'components';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-
-import styles from './dashboard.module.scss';
-
 import dashboardTabs from './tabs';
+import { colors } from 'constants/theme';
+import { Avatar } from 'components';
+import styles from './dashboard.module.scss';
 
 export default function Dashboard() {
   return (
@@ -16,6 +15,15 @@ export default function Dashboard() {
 }
 
 const Sidebar = () => {
+  const { tab } = useParams();
+  const tabStyle = {
+    true: {
+      color: colors.color_acccent_200,
+      borderLeftColor: colors.color_acccent_200,
+      backgroundColor: colors.color_primary_600,
+    },
+    false: {},
+  };
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.sidebarProfile}>
@@ -30,7 +38,9 @@ const Sidebar = () => {
         <ul className={styles.tabList}>
           {dashboardTabs.map((t) => (
             <li className={styles.listItem}>
-              <Link to={`/dashboard/${t.tab}`}>{t.title}</Link>
+              <Link to={`/dashboard/${t.tab}`} style={tabStyle[t.tab === tab]}>
+                {t.title}
+              </Link>
             </li>
           ))}
         </ul>

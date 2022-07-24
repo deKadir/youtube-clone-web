@@ -33,6 +33,7 @@ export const elapsedTime = (createdAt) => {
 };
 
 export const formatNumber = (number) => {
+  if (number === undefined || number === null) return 0;
   let num = parseInt(number);
   if (num >= 1000000) {
     return `${(num / 1000000).toFixed(1)}M`;

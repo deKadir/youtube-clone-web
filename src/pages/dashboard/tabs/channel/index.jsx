@@ -1,14 +1,16 @@
-import { Icon } from 'components';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import styles from './contents.module.scss';
+import { Icon } from 'components';
 
-export default function DashboardContentTab() {
+import styles from './playlists.module.scss';
+
+export default function DashboardChannelTab() {
   return (
     <div className={styles.container}>
-      <h2>Channel Content</h2>
+      <h2>Channel Playlists</h2>
       <table>
-        <th>Video</th>
+        <th>Playlist</th>
         <th>Visibility</th>
         <th>Date</th>
         <th>Views</th>
@@ -16,38 +18,35 @@ export default function DashboardContentTab() {
 
         <tr>
           <td>
-            <Video />
+            <Playlist />
           </td>
           <td>Private</td>
           <td>Dec 24, 2020</td>
           <td>900</td>
           <td>
             <Icon icon="Edit" />
-            <Icon icon="Delete" />
           </td>
         </tr>
         <tr>
           <td>
-            <Video />
+            <Playlist />
           </td>
           <td>Private</td>
           <td>Dec 24, 2020</td>
           <td>900</td>
           <td>
             <Icon icon="Edit" />
-            <Icon icon="Delete" />
           </td>
         </tr>
         <tr>
           <td>
-            <Video />
+            <Playlist />
           </td>
           <td>Private</td>
           <td>Dec 24, 2020</td>
           <td>900</td>
           <td>
             <Icon icon="Edit" />
-            <Icon icon="Delete" />
           </td>
         </tr>
       </table>
@@ -55,21 +54,17 @@ export default function DashboardContentTab() {
   );
 }
 
-const Video = () => {
+const Playlist = () => {
   return (
-    <div className={styles.content}>
+    <Link className={styles.content} to="/playlist">
       <img
         src="https://st2.myideasoft.com/idea/fo/10/myassets/products/813/71237789-680483449127860-5199516412451749888-n.jpg?revision=1580465975"
         alt=""
         className={styles.contentImage}
       />
       <div className={styles.contentInfo}>
-        <h1>Sezen aksu kaybolan yıllar</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A velit qui
-          architecto.
-        </p>
+        <h1>sezenaksu</h1>
       </div>
-    </div>
+    </Link>
   );
 };

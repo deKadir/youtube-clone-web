@@ -25,9 +25,9 @@ const requests = {
     reset: (params, body) => API.post('/auth/reset', body, { params }),
   },
   channel: {
-    get: (id) => API.get('/channel', { query: id }),
+    get: (id) => API.get('/channel', { params: { id } }),
     getProfile: () => API.get('/channel/profile'),
-    subscriptions: (params) => API.get('/channel/subscriptions', params),
+    subscriptions: (params) => API.get('/channel/subscriptions', { params }),
     subscribe: (params) => API.post('/channel/subscribe', {}, { params }),
     update: (body) => API.patch('/channel/update', { body }),
   },
@@ -35,6 +35,7 @@ const requests = {
     recommend: (params) => API.get('/video/recommend', { params }),
     get: (id) => API.get('/video', { params: { id } }),
     comments: (params) => API.get('/video/comments', { params }),
+    list: (params) => API.get('/video/listBy', { params }),
   },
   comment: {
     replies: (params) => API.get('/comment/replies', { params }),

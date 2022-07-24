@@ -41,11 +41,11 @@ export default function VideoPlayer({ src }, props) {
       setCurrent(event.target.currentTime);
     };
 
-    videoRef.current.addEventListener('ended', endEvent);
-    videoRef.current.addEventListener('timeupdate', timeUpdateEvent);
+    videoRef?.current?.addEventListener('ended', endEvent);
+    videoRef?.current?.addEventListener('timeupdate', timeUpdateEvent);
     const removeListeners = () => {
-      videoRef.current.removeEventListener('ended', endEvent);
-      videoRef.current.removeEventListener('timeupdate', timeUpdateEvent);
+      videoRef?.current?.removeEventListener('ended', endEvent);
+      videoRef?.current?.removeEventListener('timeupdate', timeUpdateEvent);
     };
     return removeListeners;
   }, [videoRef.current]);

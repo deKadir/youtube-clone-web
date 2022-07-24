@@ -1,49 +1,53 @@
-import { Avatar, Button } from 'components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Avatar } from 'components';
+import { usePaginate } from 'hooks/paginate';
+import requests from 'constants/api';
 import styles from './channels.module.scss';
+import { formatNumber } from 'helpers/format';
+import { getProfile } from 'helpers/file';
 export default function ChannelsTab() {
+  const [channels, setChannels] = useState([]);
+  const [page] = usePaginate();
+
+  const fetchChannels = async () => {
+    const params = {
+      page,
+      limit: 12,
+    };
+    const { data } = await requests.channel.subscriptions(params);
+    if (data?.success) {
+      setChannels((p) => [...p, ...data.data.result]);
+    }
+  };
+  useEffect(() => {
+    fetchChannels();
+  }, [page]);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <h4>Subscriptions</h4>
         <ul className={styles.list}>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
-          <li className={styles.listItem}>
-            <Subscription />
-          </li>
+          {channels.map((channel, key) => (
+            <li className={styles.listItem}>
+              <Subscription {...channel.to} key={key} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   );
 }
 
-const Subscription = () => {
+const Subscription = ({ name, subscribers, image, _id }) => {
   return (
     <div className={styles.subscription}>
-      <Link to="/">
-        <Avatar
-          src="https://yt3.ggpht.com/ytc/AKedOLTi3M4kJiu2LO3yOea4ZVHQkOenTr8dhni4VliMLg=s176-c-k-c0x00ffffff-no-rj-mo"
-          size="128"
-        />
-        <h1>Code cube</h1>
-        <span>13.5k subscribers</span>
+      <Link to={`/channel/${_id}/videos`}>
+        <Avatar src={getProfile(image)} size="128" />
+        <h1>{name}</h1>
+        <span>{formatNumber(subscribers)} subscribers</span>
       </Link>
-      <Button variant="secondary">Subscribed</Button>
+      {/* <Button variant="secondary">Subscribed</Button> */}
     </div>
   );
 };
