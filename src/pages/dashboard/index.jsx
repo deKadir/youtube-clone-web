@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import dashboardTabs from './tabs';
 import { colors } from 'constants/theme';
 import { Avatar } from 'components';
+import { getProfile } from 'helpers/file';
 import styles from './dashboard.module.scss';
 
 export default function Dashboard() {
@@ -26,14 +28,7 @@ const Sidebar = () => {
   };
   return (
     <div className={styles.sidebarContainer}>
-      <div className={styles.sidebarProfile}>
-        <Avatar
-          size="128"
-          src="https://avatars.githubusercontent.com/u/83883656?v=4"
-        />
-        <span>Your channel</span>
-        <p>kadir</p>
-      </div>
+      <Profile />
       <div className={styles.sidebarTabs}>
         <ul className={styles.tabList}>
           {dashboardTabs.map((t) => (
@@ -45,6 +40,17 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
+    </div>
+  );
+};
+
+const Profile = () => {
+  const user = useSelector((state) => state?.user?.info);
+  return (
+    <div className={styles.sidebarProfile}>
+      <Avatar size="128" src={getProfile(user?.image)} />
+      <span>Your channel</span>
+      <p>{user?.name}</p>
     </div>
   );
 };

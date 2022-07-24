@@ -31,7 +31,7 @@ export const FormLabel = (props) => {
     />
   );
 };
-export const FormInput = ({ label, error, ...props }) => {
+export const FormInput = ({ label, error, info, ...props }) => {
   return (
     <FormControl>
       <FormLabel>{label}</FormLabel>
@@ -39,9 +39,36 @@ export const FormInput = ({ label, error, ...props }) => {
         {...props}
         className={classNames(props.className, styles.formInput)}
       />
+      <FormInfo message={info} />
       <ValidationMessage>{error}</ValidationMessage>
     </FormControl>
   );
+};
+export const FormTextarea = ({ label, error, ...props }) => {
+  return (
+    <FormControl>
+      <FormLabel>{label}</FormLabel>
+      <textarea
+        {...props}
+        className={classNames(props.className, styles.formTextArea)}
+      />
+      <ValidationMessage>{error}</ValidationMessage>
+    </FormControl>
+  );
+};
+
+export const FileInput = (props) => {
+  return (
+    <input
+      {...props}
+      type="file"
+      className={classNames(props.className, styles.formFileInput)}
+    />
+  );
+};
+
+export const Checkbox = ({ checked }) => {
+  return <input type="checkbox" value={checked} />;
 };
 
 const ValidationMessage = ({ children }) => {
@@ -55,4 +82,8 @@ export const FormResponse = ({ message, success }) => {
       <span className={className}>{message}</span>
     </FormControl>
   );
+};
+
+const FormInfo = ({ message }) => {
+  return <span className={styles.formInfo}>{message}</span>;
 };

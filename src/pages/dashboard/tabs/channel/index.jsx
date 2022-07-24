@@ -1,70 +1,84 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import { Icon } from 'components';
-
-import styles from './playlists.module.scss';
+import React, { useState } from 'react';
+import { Formik } from 'formik';
+import { Avatar, Button } from 'components';
+import { FileInput, FormInput, FormResponse } from 'components/form';
+import { useSelector } from 'react-redux';
+import { getProfile } from 'helpers/file';
+import styles from './channel.module.scss';
+import Schema from 'validations/UpdateSchema';
+import requests from 'constants/api';
 
 export default function DashboardChannelTab() {
+  const { name, image } = useSelector((state) => state?.user?.info);
+  const FORM = { name, image };
+  const avatar = getProfile(image);
+
+  const [response, setResponse] = useState();
+  const [newProfile, setProfile] = useState();
+
+  const handleProfile = (e) => setProfile(e.target.files[0]);
+
+  const sendRequest = async (values) => {
+    if (newProfile && newProfile.type.split('/')[0] !== 'image') {
+      return setResponse({
+        success: false,
+        message: 'Invalid file',
+      });
+    }
+    const formData = new FormData();
+    formData.set('name', values.name);
+    formData.set('image', newProfile);
+
+    const { data } = await requests.channel.update(formData);
+    if (data?.success) {
+      setResponse({ success: true, message: 'Updated successfully!' });
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <h2>Channel Playlists</h2>
-      <table>
-        <th>Playlist</th>
-        <th>Visibility</th>
-        <th>Date</th>
-        <th>Views</th>
-        <th>Edit</th>
-
-        <tr>
-          <td>
-            <Playlist />
-          </td>
-          <td>Private</td>
-          <td>Dec 24, 2020</td>
-          <td>900</td>
-          <td>
-            <Icon icon="Edit" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Playlist />
-          </td>
-          <td>Private</td>
-          <td>Dec 24, 2020</td>
-          <td>900</td>
-          <td>
-            <Icon icon="Edit" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Playlist />
-          </td>
-          <td>Private</td>
-          <td>Dec 24, 2020</td>
-          <td>900</td>
-          <td>
-            <Icon icon="Edit" />
-          </td>
-        </tr>
-      </table>
+      <h2>Channel </h2>
+      <div className={styles.content}>
+        <Formik
+          initialValues={FORM}
+          onSubmit={sendRequest}
+          validationSchema={Schema}
+        >
+          {({ values, errors, handleChange, handleSubmit }) => (
+            <form className={styles.channelInfo} onSubmit={handleSubmit}>
+              <Avatar size="240" src={avatar} />
+              <FileInput
+                placeholder="Change channel image"
+                onChange={handleProfile}
+              />
+              {inputs.map((input, key) => (
+                <FormInput
+                  {...input}
+                  key={key}
+                  onChange={handleChange}
+                  value={values[input.name]}
+                  error={errors[input.name]}
+                />
+              ))}
+              <FormResponse {...response} />
+              <Button variant="contained" type="submit">
+                Update
+              </Button>
+            </form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 }
 
-const Playlist = () => {
-  return (
-    <Link className={styles.content} to="/playlist">
-      <img
-        src="https://st2.myideasoft.com/idea/fo/10/myassets/products/813/71237789-680483449127860-5199516412451749888-n.jpg?revision=1580465975"
-        alt=""
-        className={styles.contentImage}
-      />
-      <div className={styles.contentInfo}>
-        <h1>sezenaksu</h1>
-      </div>
-    </Link>
-  );
-};
+const inputs = [
+  {
+    name: 'name',
+    label: 'Name',
+    type: 'text',
+  },
+];

@@ -29,13 +29,14 @@ const requests = {
     getProfile: () => API.get('/channel/profile'),
     subscriptions: (params) => API.get('/channel/subscriptions', { params }),
     subscribe: (params) => API.post('/channel/subscribe', {}, { params }),
-    update: (body) => API.patch('/channel/update', { body }),
+    update: (body) => API.patch('/channel/update', body),
   },
   video: {
     recommend: (params) => API.get('/video/recommend', { params }),
     get: (id) => API.get('/video', { params: { id } }),
     comments: (params) => API.get('/video/comments', { params }),
     list: (params) => API.get('/video/listBy', { params }),
+    myVideos: (params) => API.get('/video/myVideos', { params }),
   },
   comment: {
     replies: (params) => API.get('/comment/replies', { params }),

@@ -16,7 +16,12 @@
     margin-bottom: 1.25rem;
     flex-direction: column;
   }
-  &Input {
+  &FileInput {
+    color: $color-neutral-200;
+    margin-block: 0.5rem;
+  }
+  &Input,
+  &TextArea {
     background-color: rgba($color-secondary-600, 0.7);
     border: none;
     outline: none;
@@ -27,9 +32,17 @@
     }
     border-radius: 0.25rem;
   }
+  &TextArea {
+    resize: none;
+  }
   &Label {
     color: $color-secondary-400;
     margin-bottom: 0.5rem;
+  }
+  &Info {
+    color: $color-secondary-600 !important;
+    font-size: 0.75rem !important;
+    margin-top: 0.125rem;
   }
   &ValidationMessage {
     color: $color-danger;

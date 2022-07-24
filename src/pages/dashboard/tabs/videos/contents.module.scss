@@ -6,38 +6,39 @@
   font-family: $font-family;
   h2 {
     color: $color-secondary-200;
-  }
-  table {
-    color: $color-secondary-200;
-    width: 100%;
-    padding: 1rem;
-    th {
-      text-align: center;
-      padding-bottom: 1rem;
-      font-size: 0.875rem;
-      font-weight: normal;
-      color: $color-secondary-400;
-    }
-
-    td {
-      padding: 1rem 2rem;
-      font-size: 0.875rem;
-    }
+    margin-bottom: 2rem;
   }
 }
-
+.paginate {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block: 1rem;
+}
 .content {
   display: flex;
   align-items: center;
+  width: 90%;
+  margin-inline: auto;
+  margin-bottom: 0.75rem;
+  &Body {
+    display: flex;
+  }
   &Image {
     aspect-ratio: 3/2;
     width: 20%;
     margin-right: 0.5rem;
   }
   h1 {
-    font-size: 0.875rem;
+    color: $color-secondary-200;
+    font-weight: 100;
+    font-size: 1.5rem;
   }
   p {
-    font-size: 0.75rem;
+    color: $color-secondary-400;
+  }
+  span {
+    color: $color-secondary-600;
+    font-size: 0.875rem;
   }
 }
