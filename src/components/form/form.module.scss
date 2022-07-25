@@ -35,6 +35,10 @@
   &TextArea {
     resize: none;
   }
+  &Checkbox {
+    display: block;
+    align-self: flex-start;
+  }
   &Label {
     color: $color-secondary-400;
     margin-bottom: 0.5rem;

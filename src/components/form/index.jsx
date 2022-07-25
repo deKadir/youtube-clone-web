@@ -66,9 +66,18 @@ export const FileInput = (props) => {
     />
   );
 };
-
-export const Checkbox = ({ checked }) => {
-  return <input type="checkbox" value={checked} />;
+export const FormCheckbox = ({ label, value, ...props }) => {
+  return (
+    <FormControl>
+      <FormLabel>{label}</FormLabel>
+      <input
+        {...props}
+        checked={value}
+        type="checkbox"
+        className={classNames(props.className, styles.formCheckbox)}
+      />
+    </FormControl>
+  );
 };
 
 const ValidationMessage = ({ children }) => {

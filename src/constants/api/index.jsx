@@ -37,6 +37,9 @@ const requests = {
     comments: (params) => API.get('/video/comments', { params }),
     list: (params) => API.get('/video/listBy', { params }),
     myVideos: (params) => API.get('/video/myVideos', { params }),
+    edit: (videoId, data) =>
+      API.patch('/video/edit', data, { params: { videoId } }),
+    delete: (videoId) => API.delete('/video/delete', { params: { videoId } }),
   },
   comment: {
     replies: (params) => API.get('/comment/replies', { params }),

@@ -1,0 +1,20 @@
+@import 'assets/styles/_variables.scss';
+.modal {
+  &Container {
+    padding: 1.5rem;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    color: $color-secondary-200;
+    h2 {
+      font-size: 1rem;
+      line-height: 1;
+    }
+  }
+  &Actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    align-self: flex-end;
+  }
+}

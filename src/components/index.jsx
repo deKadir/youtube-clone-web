@@ -11,6 +11,7 @@ import CommentForm from './commentForm';
 import Icon from './icon';
 import { CustomLink } from './link';
 import Spinner from './spinner';
+import Modal from './modal';
 export {
   Header,
   Sidebar,
@@ -25,4 +26,5 @@ export {
   Icon,
   CustomLink,
   Spinner,
+  Modal,
 };

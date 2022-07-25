@@ -10,7 +10,13 @@
   justify-content: center;
 }
 .content {
+  position: relative;
   background-color: $color-primary-800;
   padding: 1rem;
   max-width: 100vw;
+}
+.closeBtn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
