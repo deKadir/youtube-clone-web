@@ -36,7 +36,7 @@ export default function Home() {
   }, [page]);
 
   return (
-    <>
+    <main>
       {/* <Sidebar /> */}
       <Header />
       <Nav />
@@ -48,6 +48,6 @@ export default function Home() {
         ))}
         <Spinner loading={loading} />
       </ul>
-    </>
+    </main>
   );
 }

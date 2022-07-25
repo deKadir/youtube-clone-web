@@ -37,7 +37,7 @@ export default function Signin() {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.content}>
         <Formik
           initialValues={FORM}
@@ -77,7 +77,7 @@ export default function Signin() {
           )}
         </Formik>
       </div>
-    </div>
+    </main>
   );
 }
 

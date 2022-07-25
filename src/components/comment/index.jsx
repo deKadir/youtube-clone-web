@@ -133,7 +133,7 @@ const ReplyModel = (r) => {
     marginTop: '6px',
   };
   return (
-    <div className={styles.commentContainer} style={style}>
+    <article className={styles.commentContainer} style={style}>
       <Avatar src={getProfile(reply?.owner?.image)} />
       <div className={styles.commentBody}>
         <div className={styles.commentInfo}>
@@ -152,6 +152,6 @@ const ReplyModel = (r) => {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };

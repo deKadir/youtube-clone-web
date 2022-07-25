@@ -6,9 +6,9 @@ import { Button, Header, Icon } from 'components';
 import { ResultCard } from 'components/cards';
 export default function Search() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Header />
-      <div className={styles.content}>
+      <section className={styles.content}>
         <div className={styles.filterOptions}>
           <Button className={styles.filterHeader}>
             <Icon icon="Filter" />
@@ -48,7 +48,7 @@ export default function Search() {
             <ResultCard />
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

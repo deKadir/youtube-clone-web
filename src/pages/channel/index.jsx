@@ -13,13 +13,13 @@ export default function Channel() {
   return (
     <>
       <Header />
-      <div className={styles.container}>
+      <main className={styles.container}>
         <div className={styles.content}>
           <Profile />
           <Tabs />
         </div>
         <Tab />
-      </div>
+      </main>
     </>
   );
 }
@@ -56,7 +56,7 @@ const Profile = () => {
   }, [id]);
 
   return (
-    <div className={styles.profile}>
+    <section className={styles.profile}>
       <div className={styles.profileContent}>
         <div className={styles.profileInfo}>
           <Avatar src={getProfile(channel?.image)} size="72" />
@@ -82,7 +82,7 @@ const Profile = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

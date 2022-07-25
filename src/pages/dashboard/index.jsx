@@ -9,10 +9,10 @@ import styles from './dashboard.module.scss';
 
 export default function Dashboard() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <Sidebar />
       <Tab />
-    </div>
+    </section>
   );
 }
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
     false: {},
   };
   return (
-    <div className={styles.sidebarContainer}>
+    <main className={styles.sidebarContainer}>
       <Profile />
       <div className={styles.sidebarTabs}>
         <ul className={styles.tabList}>
@@ -40,18 +40,18 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </main>
   );
 };
 
 const Profile = () => {
   const user = useSelector((state) => state?.user?.info);
   return (
-    <div className={styles.sidebarProfile}>
+    <section className={styles.sidebarProfile}>
       <Avatar size="128" src={getProfile(user?.image)} />
       <span>Your channel</span>
       <p>{user?.name}</p>
-    </div>
+    </section>
   );
 };
 

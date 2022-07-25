@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { getProfile, getVideo } from 'helpers/file';
 import { elapsedTime, formatNumber, maxString } from 'helpers/format';
 import styles from './cards.module.scss';
+import { Avatar } from 'components';
 
 export function Content({ owner, title, ...content }) {
   return (
@@ -105,7 +106,12 @@ const Channel = ({ name, _id }) => {
 const ChannelImage = ({ _id, image, name }) => {
   return (
     <Link to={`/channel/${_id}/videos`}>
-      <img src={getProfile(image)} className={styles.channelImage} alt={name} />
+      <Avatar
+        size="40"
+        src={getProfile(image)}
+        className={styles.channelImage}
+        alt={name}
+      />
     </Link>
   );
 };

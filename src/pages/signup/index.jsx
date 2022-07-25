@@ -42,7 +42,7 @@ export default function Signup() {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.content}>
         <Formik
           validationSchema={SignupSchema}
@@ -79,7 +79,7 @@ export default function Signup() {
           )}
         </Formik>
       </div>
-    </div>
+    </main>
   );
 }
 

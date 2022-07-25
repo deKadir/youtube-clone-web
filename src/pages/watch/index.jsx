@@ -34,9 +34,9 @@ export default function Video() {
     fetchVideo();
   }, [videoId]);
   return (
-    <div>
+    <main>
       <Header />
-      <div className={styles.container}>
+      <section className={styles.container}>
         <VideoPlayer src={videoFile} />
         <div className={styles.page}>
           <div className={styles.videoSide}>
@@ -50,15 +50,15 @@ export default function Video() {
           </div>
           <Recommends videoId={videoId} />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
 const VideoDetails = ({ caption, title, tags, viewerCount, createdAt }) => {
   const date = formatDate(createdAt);
   return (
-    <div className={styles.videoDetails}>
+    <section className={styles.videoDetails}>
       <div className={styles.videoTags}>
         {tags?.map((t) => (
           <a href="">#{t}</a>
@@ -70,7 +70,7 @@ const VideoDetails = ({ caption, title, tags, viewerCount, createdAt }) => {
         <span>{date}</span>
       </div>
       <p className={styles.videoCaption}>{caption}</p>
-    </div>
+    </section>
   );
 };
 
@@ -134,10 +134,10 @@ const Recommends = ({ videoId }) => {
     fetchRecommends();
   }, [videoId]);
   return (
-    <div className={styles.recommendSide}>
+    <section className={styles.recommendSide}>
       {recommends?.map((r, key) => (
         <Recommend {...r} key={key} />
       ))}
-    </div>
+    </section>
   );
 };

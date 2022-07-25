@@ -26,7 +26,7 @@ export default function Reset() {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <div className={styles.content}>
         <Formik
           initialValues={FORM}
@@ -62,7 +62,7 @@ export default function Reset() {
           )}
         </Formik>
       </div>
-    </div>
+    </main>
   );
 }
 const inputs = [

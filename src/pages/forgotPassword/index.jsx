@@ -32,8 +32,8 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
+    <main className={styles.container}>
+      <section className={styles.content}>
         <Formik
           initialValues={FORM}
           validationSchema={ForgotSchmea}
@@ -67,7 +67,7 @@ export default function ForgotPassword() {
             </Form>
           )}
         </Formik>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
