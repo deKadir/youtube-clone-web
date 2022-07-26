@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import { SvgHeader, SvgSearch } from 'assets/icons';
 import { Avatar, Button, Icon } from 'components';
@@ -46,10 +46,25 @@ export default function Header() {
 }
 
 const SearchBar = () => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  const handleChange = (e) => setSearch(e.target.value.replace(' ', '+'));
+
+  const handleSearch = () =>
+    search.length ? navigate(`/search?search=${search}`) : '';
   return (
     <div className={styles.searchContainer}>
-      <input type="text" placeholder="Search" />
-      <button className={styles.searchButton} title="Search">
+      <input
+        type="text"
+        placeholder="Search"
+        onChange={handleChange}
+        onKeyPress={(e) => e.code === 'Enter' && handleSearch()}
+      />
+      <button
+        className={styles.searchButton}
+        title="Search"
+        onClick={handleSearch}
+      >
         <SvgSearch />
       </button>
     </div>

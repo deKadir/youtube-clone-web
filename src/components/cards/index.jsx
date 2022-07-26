@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { getProfile, getVideo } from 'helpers/file';
 import { elapsedTime, formatNumber, maxString } from 'helpers/format';
-import styles from './cards.module.scss';
 import { Avatar } from 'components';
+import styles from './cards.module.scss';
 
 export function Content({ owner, title, ...content }) {
   return (
@@ -45,19 +45,19 @@ export function Recommend({
   );
 }
 
-export function ResultCard() {
+export function ResultCard({ owner, title, thumbnail, ...video }) {
   return (
     <Link className={styles.result} to="/watch">
       <div className={styles.resultThumbnail}>
-        <Thumbnail />
+        <Thumbnail title={title} thumbnail={thumbnail} />
       </div>
       <div className={styles.resultInfoSide}>
         <div className={styles.resultInfo}>
-          <Title title="Sezen aksu firuze high quality full album" />
-          <VideoDetails date="4 hours" views="42k" />
+          <Title title={title} />
+          <VideoDetails {...video} />
           <div className={styles.resultChannelInfo}>
-            <ChannelImage src="https://yt3.ggpht.com/ytc/AKedOLTmeJoYYkGzyMymXox1FyO7UQICjLFYfOKIl61tmA=s88-c-k-c0x00ffffff-no-rj" />
-            <Channel name="Sezen aksu" />
+            <ChannelImage {...owner} />
+            <Channel {...owner} />
           </div>
         </div>
       </div>

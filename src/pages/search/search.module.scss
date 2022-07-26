@@ -10,7 +10,7 @@
   width: $content-small;
   margin-inline: auto;
 }
-.filterOptions {
+.filterSide {
   border-bottom: 1px solid $color-secondary-600;
   margin-bottom: 1rem;
 }
@@ -27,13 +27,13 @@
     text-transform: uppercase;
   }
 }
-.filterCatalog {
+.filterOptions {
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
   margin-bottom: 1rem;
 }
-.catalog {
+.option {
   color: $color-secondary-200;
   font-family: $font-family;
   display: flex;
@@ -50,6 +50,10 @@
     cursor: pointer;
     color: $color-secondary-400;
     text-transform: capitalize;
+    transition: $animation-duration;
+    &:hover {
+      color: $color-secondary-600;
+    }
   }
 }
 .result {

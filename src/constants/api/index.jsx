@@ -46,6 +46,7 @@ const requests = {
           'Content-Type': `multipart/form-data`,
         },
       }),
+    search: (params) => API.get('/video/v', { params }),
   },
   comment: {
     replies: (params) => API.get('/comment/replies', { params }),
