@@ -1,6 +1,12 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My own youtube frontend clone with React
+
+## Check src/screenshots folder for all screenshots
+![alt text](https://github.com/deKadir/youtube-clone-web/blob/main/src/screenshots/homePage-1.png?raw=true)
+![alt text](https://github.com/deKadir/youtube-clone-web/blob/main/src/screenshots/homePage-2.png?raw=true)
+![alt text](https://github.com/deKadir/youtube-clone-web/blob/main/src/screenshots/watchPage.png?raw=true)
+![alt text](https://github.com/deKadir/youtube-clone-web/blob/main/src/screenshots/channelPage.png?raw=true)
+
 
 ## Available Scripts
 
