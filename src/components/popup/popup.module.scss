@@ -3,11 +3,12 @@
   position: fixed;
   width: 100vw;
   inset: 0;
-  background-color: rgba($color-primary-800, 0.2);
+  background-color: rgba($color-primary-800, 0.8);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999999999999;
 }
 .content {
   position: relative;

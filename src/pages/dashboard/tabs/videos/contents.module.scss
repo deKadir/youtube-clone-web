@@ -17,10 +17,10 @@
 }
 .content {
   display: flex;
-  align-items: center;
   width: 90%;
   margin-inline: auto;
   margin-bottom: 0.75rem;
+  justify-content: space-between;
   &Body {
     display: flex;
   }

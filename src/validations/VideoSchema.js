@@ -5,10 +5,8 @@ const EditVideoSchema = yup.object({
   caption: yup.string().required('Please provide caption'),
 });
 const UploadVideoSchema = yup.object({
-  email: yup
-    .string()
-    .email('Please provide valid email')
-    .required('Email is required'),
+  title: yup.string().required('Please provide title'),
+  caption: yup.string().required('Please provide caption'),
 });
 
 export { EditVideoSchema, UploadVideoSchema };

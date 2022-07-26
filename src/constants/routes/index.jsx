@@ -34,7 +34,7 @@ const appRoutes = [
     component: Channel,
   },
   {
-    exact: true,
+    exact: false,
     protected: false,
     path: '/search',
     component: Search,

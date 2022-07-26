@@ -40,6 +40,12 @@ const requests = {
     edit: (videoId, data) =>
       API.patch('/video/edit', data, { params: { videoId } }),
     delete: (videoId) => API.delete('/video/delete', { params: { videoId } }),
+    upload: (body) =>
+      API.post('/video/upload', body, {
+        headers: {
+          'Content-Type': `multipart/form-data`,
+        },
+      }),
   },
   comment: {
     replies: (params) => API.get('/comment/replies', { params }),
@@ -50,6 +56,9 @@ const requests = {
   },
   action: {
     add: (params) => API.post('/action', {}, { params }),
+  },
+  category: {
+    list: () => API.get('/category'),
   },
 };
 export default requests;

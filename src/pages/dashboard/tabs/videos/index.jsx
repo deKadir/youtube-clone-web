@@ -49,10 +49,9 @@ export default function DashboardVideosTab() {
 const Video = (video) => {
   const [edit, setEdit] = useState(false);
   const [del, setDelete] = useState(false);
-  const deleteVideo = () => {};
   const editVideo = () => setEdit(true);
   return (
-    <div className={styles.content}>
+    <article className={styles.content}>
       <a
         className={styles.contentBody}
         href={`/watch?v=${video._id}`}
@@ -75,7 +74,7 @@ const Video = (video) => {
         <VideoPopup active={edit} setActive={setEdit} video={video} />
         <DeleteModal active={del} setActive={setDelete} video={video} />
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -120,7 +119,9 @@ const DeleteModal = ({ active, setActive, video }) => {
   const { title, _id } = video;
   const onAccept = async () => {
     const { data } = await requests.video.delete(_id);
-    setTimeout(() => window.location.reload(), 1000);
+    if (data?.success) {
+      setTimeout(() => window.location.reload(), 1000);
+    }
   };
   const onCancel = () => setActive(false);
 

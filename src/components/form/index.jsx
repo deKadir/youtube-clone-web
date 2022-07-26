@@ -79,6 +79,18 @@ export const FormCheckbox = ({ label, value, ...props }) => {
     </FormControl>
   );
 };
+export const FormSelect = ({ values = [], label, ...props }) => {
+  return (
+    <FormControl>
+      <FormLabel>{label}</FormLabel>
+      <select {...props}>
+        {values.map((v) => (
+          <option value={v.value}>{v.name}</option>
+        ))}
+      </select>
+    </FormControl>
+  );
+};
 
 const ValidationMessage = ({ children }) => {
   return <span className={styles.formValidationMessage}>{children}</span>;
