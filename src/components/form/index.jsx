@@ -59,11 +59,21 @@ export const FormTextarea = ({ label, error, ...props }) => {
 
 export const FileInput = (props) => {
   return (
-    <input
-      {...props}
-      type="file"
-      className={classNames(props.className, styles.formFileInput)}
-    />
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1rem',
+      }}
+    >
+      <FormLabel>{props.label}</FormLabel>
+      <input
+        {...props}
+        type="file"
+        className={classNames(props.className, styles.formFileInput)}
+      />
+    </div>
   );
 };
 export const FormCheckbox = ({ label, value, ...props }) => {

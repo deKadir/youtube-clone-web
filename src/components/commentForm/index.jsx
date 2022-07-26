@@ -4,14 +4,19 @@ import styles from './form.module.scss';
 import { useSelector } from 'react-redux';
 import { getProfile } from 'helpers/file';
 import requests from 'constants/api';
+import { useAuthenticate } from 'hooks/access';
+import { useNavigate } from 'react-router-dom';
 export default function CommentForm({ type, to }) {
   const user = useSelector((state) => state?.user?.info);
+  const auth = useAuthenticate();
+  const navigate = useNavigate();
   const profile = getProfile(user?.image);
   const [focus, setFocus] = useState(false);
   const [caption, setCaption] = useState('');
   const types = ['comment', 'reply'];
 
   const sendRequest = async () => {
+    if (!auth) return navigate('/signin');
     if (!types.includes(type) || !caption.length) return;
     const owner = type === 'comment' ? 'video' : 'comment';
     const body = {
@@ -27,7 +32,7 @@ export default function CommentForm({ type, to }) {
 
   return (
     <div className={styles.commentForm}>
-      <Avatar size="40" src={profile} />
+      {auth && <Avatar size="40" src={profile} />}
       <div className={styles.formContainer}>
         <input
           type="text"

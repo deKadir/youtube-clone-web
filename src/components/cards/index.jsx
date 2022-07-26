@@ -37,7 +37,7 @@ export function Recommend({
       <div className={styles.recommendInfoSide}>
         <div className={styles.recommendInfo}>
           <Title title={title} />
-          <Channel name={owner?.name} />
+          <Channel {...owner} />
           <VideoDetails createdAt={createdAt} viewerCount={viewerCount} />
         </div>
       </div>
@@ -91,7 +91,7 @@ const Thumbnail = ({ thumbnail, title }) => {
         src={getVideo(thumbnail)}
         alt={title}
       />
-      <span className={styles.videoLength}>4:32</span>
+      {/* <span className={styles.videoLength}>4:32</span> */}
     </div>
   );
 };

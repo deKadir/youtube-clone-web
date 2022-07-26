@@ -34,7 +34,7 @@ export default function VideoPlayer({ src }, props) {
   useEffect(() => {
     if (!videoRef) return;
     setTimeout(() => {
-      setDuration(videoRef.current?.duration);
+      setDuration(videoRef.current?.duration || 0);
     }, 100);
     const endEvent = () => setPlaying(false);
     const timeUpdateEvent = (event) => {

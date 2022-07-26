@@ -37,6 +37,13 @@
   background-color: transparent;
   color: $color-secondary-400;
 }
+.outlined {
+  @extend .btn;
+  @extend .disabled;
+  background-color: transparent;
+  border: 2px solid $color-neutral-200;
+  color: $color-neutral-200;
+}
 .contained {
   @extend .btn;
   @extend .disabled;

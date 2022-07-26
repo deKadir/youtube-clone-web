@@ -15,6 +15,7 @@ import { getVideo } from 'helpers/file';
 import styles from './watch.module.scss';
 import { formatDate } from 'helpers/format';
 import { usePaginate } from 'hooks/paginate';
+import { useAuthenticate } from 'hooks/access';
 
 export default function Video() {
   const [query, setQuery] = useSearchParams();

@@ -18,9 +18,12 @@ import {
 import { UploadVideoSchema } from 'validations/VideoSchema';
 import styles from './header.module.scss';
 import requests from 'constants/api';
+import { useAuthenticate } from 'hooks/access';
 
 export default function Header() {
   const user = useSelector((state) => state?.user?.info);
+  const navigate = useNavigate();
+  const auth = useAuthenticate();
   const profile = getProfile(user?.image);
   const [active, setActive] = useState(false);
   return (
@@ -36,8 +39,16 @@ export default function Header() {
           <SearchBar />
         </div>
         <div className={styles.headerRight}>
-          <Icon icon="Upload" onClick={() => setActive(true)} />
-          <Avatar src={profile} />
+          {auth ? (
+            <>
+              <Icon icon="Upload" onClick={() => setActive(true)} />
+              <Avatar src={profile} />
+            </>
+          ) : (
+            <Button variant="outlined" onClick={() => navigate('/signin')}>
+              Login
+            </Button>
+          )}
         </div>
       </div>
       <VideoUpload active={active} setActive={setActive} />
@@ -172,8 +183,16 @@ const VideoUpload = ({ active, setActive }) => {
       >
         {({ values, errors, handleChange, handleSubmit, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
-            <FileInput name="thumbnail" onChange={handleFile} />
-            <FileInput name="video" onChange={handleFile} />
+            <FileInput
+              name="thumbnail"
+              onChange={handleFile}
+              label="Upload thumbnail image"
+            />
+            <FileInput
+              name="video"
+              onChange={handleFile}
+              label="Upload video"
+            />
             {inputs.map(({ Component, ...props }) => (
               <Component
                 {...props}

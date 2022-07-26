@@ -38,6 +38,7 @@ const Profile = () => {
   };
 
   const handleSubscribe = async () => {
+    if (!auth) return navigate('/signin');
     const params = {
       to: id,
       action: 'subscribe',

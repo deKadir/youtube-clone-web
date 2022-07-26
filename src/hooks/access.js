@@ -7,5 +7,6 @@ export const useAuthorize = (id) => {
 };
 export const useAuthenticate = () => {
   const token = useSelector((state) => state?.user?.token);
+  console.log(token);
   return !!token;
 };

@@ -9,6 +9,7 @@
 }
 .video {
   width: min(900px, 100%);
+  max-height: 500px;
   &:hover ~ .videoControls {
     opacity: 1;
   }

@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { Avatar } from 'components';
 import { usePaginate } from 'hooks/paginate';
 import requests from 'constants/api';
-import styles from './channels.module.scss';
 import { formatNumber } from 'helpers/format';
 import { getProfile } from 'helpers/file';
+import styles from './channels.module.scss';
+
 export default function ChannelsTab() {
   const [channels, setChannels] = useState([]);
   const [page] = usePaginate();
-
   const fetchChannels = async () => {
     const params = {
       page,

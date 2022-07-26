@@ -62,5 +62,5 @@ export const formatDate = (date) => {
     'Dec',
   ];
 
-  return `${months[month]} ${day}, ${year}`;
+  return `${months[month - 1]} ${day}, ${year}`;
 };

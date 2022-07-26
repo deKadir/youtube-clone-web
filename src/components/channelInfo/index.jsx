@@ -2,15 +2,19 @@ import { Avatar, Button, Icon } from 'components';
 import requests from 'constants/api';
 import { getProfile } from 'helpers/file';
 import { formatNumber } from 'helpers/format';
+import { useAuthenticate } from 'hooks/access';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './channel.module.scss';
 
 export default function ChannelInfo(c) {
+  const auth = useAuthenticate();
+  const navigate = useNavigate();
   const [channel, setChannel] = useState({ ...c });
   const profile = getProfile(channel?.image);
   const subCount = formatNumber(channel?.subscribers);
   const subscribe = async () => {
+    if (!auth) return navigate('/signin');
     const params = {
       to: channel?._id,
       action: 'subscribe',
