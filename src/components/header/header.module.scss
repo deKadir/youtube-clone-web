@@ -20,7 +20,7 @@
   &Left {
     gap: 1rem;
     svg {
-      color: white;
+      color: $color-secondary-200;
     }
     a {
       display: flex;
@@ -69,5 +69,11 @@
     svg {
       fill: $color-secondary-200;
     }
+  }
+}
+
+@media (max-width: '760px') {
+  .searchContainer {
+    width: 100%;
   }
 }

@@ -59,3 +59,9 @@
   cursor: pointer;
   margin-left: 0.5rem;
 }
+
+@media (max-width: '750px') {
+  .container {
+    width: 90vw;
+  }
+}

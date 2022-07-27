@@ -33,6 +33,7 @@ export default function VideoPlayer({ src }, props) {
 
   useEffect(() => {
     if (!videoRef) return;
+    setPlaying(false);
     setTimeout(() => {
       setDuration(videoRef.current?.duration || 0);
     }, 100);
@@ -48,7 +49,7 @@ export default function VideoPlayer({ src }, props) {
       videoRef?.current?.removeEventListener('timeupdate', timeUpdateEvent);
     };
     return removeListeners;
-  }, [videoRef.current]);
+  }, [videoRef.current, src]);
 
   return (
     <div className={styles.videoContainer} {...props}>
